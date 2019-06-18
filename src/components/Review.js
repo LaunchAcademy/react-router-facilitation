@@ -1,12 +1,10 @@
 import React from 'react';
-// import '../styles/Review.css'
 
 const Review = (props) => {
-
-  let {rating, body, onClick} = props
+  let {id, rating, body} = props
 
   return(
-    <div className="review" onClick={onClick}>
+    <div className="review">
       <h3> Review </h3>
       <p>
         Rating: {rating}

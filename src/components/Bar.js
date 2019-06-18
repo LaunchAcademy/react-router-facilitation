@@ -1,10 +1,10 @@
 import React from 'react'
+
 import Review from './Review'
-// import '../styles/Bar.css'
 
 const Bar = (props) => {
   let { id, averageRating, name, reviews } = props
-  
+
   let barReviews = reviews.map(review => {
     return(
       <Review
@@ -19,7 +19,7 @@ const Bar = (props) => {
   return(
     <div className="bar">
       <h2>{name}</h2>
-      Average Rating: {averageRating}
+      <span>Average Rating: {averageRating}</span>
       <div>
         {barReviews}
       </div>

@@ -10,12 +10,12 @@ class BarsIndexContainer extends Component {
   }
 
   componentDidMount() {
-    // fetch('http://localhost:4567/api/v1/bars')
-    // .then((response) => response.json())
-    // .then((json) => {
-    //   // debugger;
-    //   this.setState({bars: json})
-    // })
+    fetch('http://localhost:4567/api/v1/bars')
+    .then((response) => response.json())
+    .then((json) => {
+      // debugger;
+      this.setState({bars: json})
+    })
   }
 
   render() {

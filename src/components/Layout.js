@@ -1,18 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router';
-import BackButton from './BackButton.js';
+import { Switch, Route, Link } from "react-router-dom"
+
+import BarShowContainer from '../containers/BarShowContainer'
+import BarsIndexContainer from '../containers/BarsIndexContainer'
 
 const Layout = (props) => {
   return(
     <div className="layout">
-      <BackButton />
-      <Link to='/'> HOME </Link>
-      <br />
+      <div className="top-bar grid-x">
+        <div className="top-bar-left">
+          <Link className="site-title" to="/bars">Bars of Boston</Link>
+        </div>
+      </div>
 
-      <h1 className="page-title"> Bars App</h1>
+      <div className="main-body">
+        <Switch>
+          <Route exact path="/" component={BarsIndexContainer} />
+          <Route exact path="/bars" component={BarsIndexContainer} />
+          <Route exact path="/bars/:id" component={BarShowContainer} />
+        </Switch>
+      </div>
 
-      { props.children }
-      
+
     </div>
   )
 }

@@ -12,13 +12,14 @@ class BarContainer extends Component {
   }
 
   componentDidMount() {
-    // let barId = this.props.params.id;
-    // fetch(`http://localhost:4567/api/v1/bars/${barId}`)
-    // .then((response) => response.json())
-    // .then((json) => {
-    //   console.log(json)
-    //   this.setState({data: json})
-    // })
+    debugger;
+    let barId = this.props.match.params.id;
+    fetch(`http://localhost:4567/api/v1/bars/${barId}`)
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json)
+      this.setState({data: json})
+    })
   }
 
   render() {
