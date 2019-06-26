@@ -37,3 +37,7 @@ body {
 .top-bar {
   background-color: #00cc66;
 }
+
+.top-bar-coffee {
+  background-color: brown;
+}

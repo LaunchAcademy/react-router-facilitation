@@ -1,7 +1,7 @@
 import React, { Component }  from 'react'
 import Bar from '../components/Bar'
 
-class BarContainer extends Component {
+class BarShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,12 +12,13 @@ class BarContainer extends Component {
   }
 
   componentDidMount() {
-    debugger;
+    // debugger;
     let barId = this.props.match.params.id;
     fetch(`http://localhost:4567/api/v1/bars/${barId}`)
     .then((response) => response.json())
     .then((json) => {
       console.log(json)
+      // debugger
       this.setState({data: json})
     })
   }
@@ -25,7 +26,7 @@ class BarContainer extends Component {
   render() {
     return(
       <div className="bars-container">
-      <h3> Bar Show Container </h3>
+      <h3> Bar Showssssssss Container </h3>
         <Bar
           key={this.state.data.id}
           id={this.state.data.id}
@@ -38,4 +39,4 @@ class BarContainer extends Component {
   }
 }
 
-export default BarContainer
+export default BarShowContainer

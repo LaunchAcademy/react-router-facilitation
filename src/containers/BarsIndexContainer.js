@@ -10,6 +10,7 @@ class BarsIndexContainer extends Component {
   }
 
   componentDidMount() {
+    // debugger
     fetch('http://localhost:4567/api/v1/bars')
     .then((response) => response.json())
     .then((json) => {

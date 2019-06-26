@@ -21,7 +21,9 @@ const Layout = (props) => {
         </Switch>
       </div>
 
-
+      <div className="top-bar">
+        FOOTER
+      </div>
     </div>
   )
 }

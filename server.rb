@@ -111,6 +111,7 @@ get "/api/v1/bars" do
 end
 
 get "/api/v1/bars/:id" do |id|
+  # binding.pry
   bars.find { |bar| bar[:id] == id.to_i }.to_json
 end
 
