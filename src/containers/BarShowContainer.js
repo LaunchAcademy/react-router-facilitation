@@ -16,8 +16,6 @@ const BarShowContainer =(props) => {
     fetch(`http://localhost:4567/api/v1/bars/${barId}`)
     .then((response) => response.json())
     .then((barJson) => {
-      console.log(barJson)
-      // debugger
       setBarRecord(barJson)
     })
   }, [])

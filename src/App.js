@@ -10,11 +10,14 @@ const App = props => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/bars" component={Layout} />
-        <Route path="/coffees" component={CoffeeLayout} />
+        <Route exact path="/" component={BarsIndexContainer} />
+        <Route exact path="/bars" component={BarsIndexContainer} />
+        <Route exact path="/bars/:id" component={BarShowContainer} />
       </Switch>
     </BrowserRouter>
   )
 }
 
 export default App
+
+// <Route path="/bars" component={Layout} />
