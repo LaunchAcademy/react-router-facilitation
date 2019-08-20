@@ -1,45 +1,39 @@
-import React, { Component }  from 'react';
+import React, { useState, useEffect }  from 'react'
+
 import BarTile from '../components/BarTile';
 
-class BarsIndexContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      bars: []
-    }
-  }
+const BarsIndexContainer = (props) => {
+  const [bars, setBars] = useState([])
 
-  componentDidMount() {
+  useEffect(() => {
     // debugger
     fetch('http://localhost:4567/api/v1/bars')
     .then((response) => response.json())
-    .then((json) => {
+    .then((barsJson) => {
       // debugger;
-      this.setState({bars: json})
+      setBars(barsJson)
     })
-  }
+  }, [])
 
-  render() {
-    let bars = this.state.bars.map(bar => {
-      return(
-        <BarTile
-          key={bar.id}
-          id={bar.id}
-          name={bar.name}
-          address={bar.address}
-          hours_of_operation={bar.hours_of_operation}
-          cover_charge={bar.cover_charge}
-        />
-      )
-    })
-
+  let barTiles = bars.map(bar => {
     return(
-      <div className="bars-container">
-        <h2> I am the Bars Index Container </h2>
-        {bars}
-      </div>
+      <BarTile
+        key={bar.id}
+        id={bar.id}
+        name={bar.name}
+        address={bar.address}
+        hours_of_operation={bar.hours_of_operation}
+        cover_charge={bar.cover_charge}
+      />
     )
-  }
+  })
+
+  return(
+    <div className="bars-container">
+      <h2> I am the Bars Index Container </h2>
+      {barTiles}
+    </div>
+  )
 }
 
 export default BarsIndexContainer;

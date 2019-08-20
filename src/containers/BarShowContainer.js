@@ -1,42 +1,38 @@
-import React, { Component }  from 'react'
+import React, { useState, useEffect }  from 'react'
 import Bar from '../components/Bar'
 
-class BarShowContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: {
-        reviews: []
-      }
-    }
-  }
+const BarShowContainer =(props) => {
+  const [barRecord, setBarRecord] = useState({
+    id: null,
+    name: "",
+    address: "",
+    cover_charge: null,
+    hours_of_operation: "",
+    reviews: []
+  })
 
-  componentDidMount() {
-    // debugger;
-    let barId = this.props.match.params.id;
+  useEffect(() => {
+    let barId = props.match.params.id;
     fetch(`http://localhost:4567/api/v1/bars/${barId}`)
     .then((response) => response.json())
-    .then((json) => {
-      console.log(json)
+    .then((barJson) => {
+      console.log(barJson)
       // debugger
-      this.setState({data: json})
+      setBarRecord(barJson)
     })
-  }
+  }, [])
 
-  render() {
-    return(
-      <div className="bars-container">
+  return(
+    <div className="bars-container">
       <h3> Bar Showssssssss Container </h3>
-        <Bar
-          key={this.state.data.id}
-          id={this.state.data.id}
-          name={this.state.data.name}
-          averageRating={this.state.data.average_rating}
-          reviews={this.state.data.reviews}
-        />
-      </div>
-    )
-  }
+      <Bar
+        key={barRecord.id}
+        id={barRecord.id}
+        name={barRecord.name}
+        reviews={barRecord.reviews}
+      />
+    </div>
+  )
 }
 
 export default BarShowContainer
