@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route, Link } from "react-router-dom"
 
-import BarShowContainer from '../containers/BarShowContainer'
-import BarsIndexContainer from '../containers/BarsIndexContainer'
+import BarShowContainer from './BarShowContainer'
+import BarsIndexContainer from './BarsIndexContainer'
 
 const Layout = (props) => {
   return(

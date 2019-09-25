@@ -1,21 +1,19 @@
 import React, { useState, useEffect }  from 'react'
 
-import BarTile from '../components/BarTile';
+import BarTile from './BarTile';
 
 const BarsIndexContainer = (props) => {
   const [bars, setBars] = useState([])
 
   useEffect(() => {
-    // debugger
     fetch('http://localhost:4567/api/v1/bars')
     .then((response) => response.json())
     .then((barsJson) => {
-      // debugger;
       setBars(barsJson)
     })
   }, [])
 
-  let barTiles = bars.map(bar => {
+  const barTiles = bars.map(bar => {
     return(
       <BarTile
         key={bar.id}

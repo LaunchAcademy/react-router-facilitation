@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react'
-import Bar from '../components/Bar'
+import Bar from './Bar'
 
 const BarShowContainer =(props) => {
   const [barRecord, setBarRecord] = useState({

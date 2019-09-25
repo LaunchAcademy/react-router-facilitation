@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const BarTile = (props) => {
-    let { id, name, address, hours_of_operation, cover_charge } = props
-
+const BarTile = ({ id, name, address, hours_of_operation, cover_charge }) => {
     return(
       <div className="bar">
         <h1><Link to={`/bars/${id}`}> {name} </Link></h1>

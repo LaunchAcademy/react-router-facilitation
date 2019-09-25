@@ -1,10 +1,10 @@
 import React from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
-import BarShowContainer from './containers/BarShowContainer'
-import BarsIndexContainer from './containers/BarsIndexContainer'
-import Layout from "./components/Layout"
-import CoffeeLayout from "./components/CoffeeLayout"
+import BarShowContainer from './BarShowContainer'
+import BarsIndexContainer from './BarsIndexContainer'
+// import Layout from "./Layout"
+// import CoffeeLayout from "./CoffeeLayout"
 
 const App = props => {
   return (
@@ -19,5 +19,3 @@ const App = props => {
 }
 
 export default App
-
-// <Route path="/bars" component={Layout} />

@@ -3,7 +3,6 @@ import { Switch, Route, Link } from "react-router-dom"
 
 const CoffeeLayout = (props) => {
   return(
-
     <div className="layout">
       <div className="top-bar-coffee grid-x">
         <div className="top-bar-left">
