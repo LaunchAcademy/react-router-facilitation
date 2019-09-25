@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from 'react'
 import Bar from '../components/Bar'
 
-const BarShowContainer =(props) => {
+const BarShowContainer = (props) => {
   const [barRecord, setBarRecord] = useState({
     id: null,
     name: "",
@@ -19,6 +19,7 @@ const BarShowContainer =(props) => {
       setBarRecord(barJson)
     })
   }, [])
+
 
   return(
     <div className="bars-container">

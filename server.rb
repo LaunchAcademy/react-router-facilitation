@@ -1,5 +1,6 @@
 require 'sinatra'
 require "json"
+require "sinatra/json"
 require "sinatra/reloader" if development?
 require "pry" if development? || test?
 
@@ -107,12 +108,17 @@ bars = [
 ]
 
 get "/api/v1/bars" do
-  bars.to_json
+  # json({"bars": bars})
+  json bars
 end
 
 get "/api/v1/bars/:id" do |id|
   # binding.pry
-  bars.find { |bar| bar[:id] == id.to_i }.to_json
+  json bars.find { |bar| bar[:id] == id.to_i }
+end
+
+get '/' do
+  erb :home
 end
 
 get '/bars' do

@@ -7,19 +7,19 @@ const CoffeeLayout = (props) => {
     <div className="layout">
       <div className="top-bar-coffee grid-x">
         <div className="top-bar-left">
-          <Link className="site-title" to="/bars">Coffee of Boston</Link>
+          <Link className="site-title" to="/bars">CoffeeEEEE of Boston</Link>
         </div>
       </div>
 
       <div className="main-body">
         <Switch>
-          <Route exact path="/coffees" component={BarsIndexContainer} />
-          <Route exact path="/coffees/:id" component={BarShowContainer} />
+          <Route exact path="/coffees" component={CoffeesIndexContainer} />
+          <Route exact path="/coffees/:id" component={CoffeeShowContainer} />
         </Switch>
       </div>
 
       <div className="top-bar-coffee">
-        FOOTER
+        FOOTER COFFEEE
       </div>
     </div>
   )
@@ -28,6 +28,6 @@ const CoffeeLayout = (props) => {
 export default CoffeeLayout;
 
 
-// <Route exact path="/" component={BarsIndexContainer} />
-// <Route exact path="/bars" component={BarsIndexContainer} />
-// <Route exact path="/bars/:id" component={BarShowContainer} />
+// <Route exact path="/" component={CoffeesIndexContainer} />
+// <Route exact path="/bars" component={CoffeesIndexContainer} />
+// <Route exact path="/bars/:id" component={CoffeeShowContainer} />
