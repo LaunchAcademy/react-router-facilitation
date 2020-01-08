@@ -1,6 +1,9 @@
 import React from 'react';
 import { Switch, Route, Link } from "react-router-dom"
 
+import BarShowContainer from './BarShowContainer'
+import BarsIndexContainer from './BarsIndexContainer'
+
 const CoffeeLayout = (props) => {
   return(
     <div className="layout">
@@ -11,10 +14,7 @@ const CoffeeLayout = (props) => {
       </div>
 
       <div className="main-body">
-        <Switch>
-          <Route exact path="/coffees" component={BarsIndexContainer} />
-          <Route exact path="/coffees/:id" component={BarShowContainer} />
-        </Switch>
+        Coffee Components and Route
       </div>
 
       <div className="top-bar-coffee">
