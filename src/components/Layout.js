@@ -6,6 +6,9 @@ import BarsIndexContainer from './BarsIndexContainer'
 import CoffeeShop from "./CoffeeShop"
 
 const Layout = (props) => {
+  console.log(props.fetchData)
+
+
   return(
     <div className="layout">
       <div className="top-bar grid-x">
@@ -15,7 +18,11 @@ const Layout = (props) => {
       </div>
 
       <div className="main-body">
-  
+        <Switch>
+          <Route exact path="/" component={BarsIndexContainer} />
+          <Route exact path="/bars" component={BarsIndexContainer} />
+          <Route exact path="/bars/:id" component={BarShowContainer} />
+        </Switch>
       </div>
 
       <div className="top-bar">

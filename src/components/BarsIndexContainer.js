@@ -5,8 +5,14 @@ import BarTile from './BarTile';
 const BarsIndexContainer = (props) => {
   const [bars, setBars] = useState([])
 
+  const fetchBars = async () => {
+    const response = await fetch("/api/v1/bars")
+    const parsedBarStuff = await response.json()
+    setBars(parsedBarStuff)
+  }
+
   useEffect(() => {
-  
+    fetchBars()
   }, [])
 
   const barTiles = bars.map(bar => {

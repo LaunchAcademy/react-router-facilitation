@@ -123,18 +123,22 @@ get "/api/v1/bars/:id" do
   return json barInfo
 end
 
-# get '/' do
-#   erb :home
-# end
-
-# get '/bars' do
-#   erb :home
-# end
-
-# get '/bars/:id' do
-#   erb :home
-# end
-
-get '*' do
+get '/' do
   erb :home
 end
+
+get '/bars' do
+  erb :home
+end
+
+get '/bars/:id' do
+  erb :home
+end
+
+# get '*' do
+#   erb :home
+# end
+
+
+# what routing do we need to worry about in sinatra vs in react-router
+# how are we running a react application with & w/o sinatra 

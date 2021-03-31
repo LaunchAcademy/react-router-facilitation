@@ -8,9 +8,12 @@ import Layout from "./Layout"
 import CoffeeLayout from "./CoffeeLayout"
 
 const App = props => {
+
   return (
     <BrowserRouter>
-      <Route path="/" component={Layout}/>
+      <Route path="/">
+        <Layout fetchData={data} />
+      </Route>
     </BrowserRouter>
   )
 }
