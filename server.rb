@@ -109,7 +109,7 @@ bars = [
 ]
 
 get "/api/v1/bars" do
-  bars.to_json
+  return bars.to_json
 end
 
 get "/api/v1/bars/:id" do
@@ -120,16 +120,20 @@ get "/api/v1/bars/:id" do
     end
   end
 
-  json barInfo
+  return json barInfo
 end
 
-get '/bars' do
-  erb :home
-end
+# get '/' do
+#   erb :home
+# end
 
-get '/bars/:id' do
-  erb :home
-end
+# get '/bars' do
+#   erb :home
+# end
+
+# get '/bars/:id' do
+#   erb :home
+# end
 
 get '*' do
   erb :home

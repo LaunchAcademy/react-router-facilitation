@@ -6,11 +6,7 @@ const BarsIndexContainer = (props) => {
   const [bars, setBars] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:4567/api/v1/bars')
-    .then((response) => response.json())
-    .then((barsJson) => {
-      setBars(barsJson)
-    })
+  
   }, [])
 
   const barTiles = bars.map(bar => {

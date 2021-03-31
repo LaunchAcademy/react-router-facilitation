@@ -3,6 +3,7 @@ import { Switch, Route, Link } from "react-router-dom"
 
 import BarShowContainer from './BarShowContainer'
 import BarsIndexContainer from './BarsIndexContainer'
+import CoffeeShop from "./CoffeeShop"
 
 const Layout = (props) => {
   return(
@@ -14,11 +15,7 @@ const Layout = (props) => {
       </div>
 
       <div className="main-body">
-        <Switch>
-          <Route exact path="/" component={BarsIndexContainer} />
-          <Route exact path="/bars" component={BarsIndexContainer} />
-          <Route exact path="/bars/:id" component={BarShowContainer} />
-        </Switch>
+  
       </div>
 
       <div className="top-bar">

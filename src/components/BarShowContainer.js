@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from 'react'
 import Bar from './Bar'
 
-const BarShowContainer =(props) => {
+const BarShowContainer = (props) => {
   const [barRecord, setBarRecord] = useState({
     id: null,
     name: "",
@@ -12,12 +12,7 @@ const BarShowContainer =(props) => {
   })
 
   useEffect(() => {
-    let barId = props.match.params.id;
-    fetch(`http://localhost:4567/api/v1/bars/${barId}`)
-    .then((response) => response.json())
-    .then((barJson) => {
-      setBarRecord(barJson)
-    })
+
   }, [])
 
   return(
