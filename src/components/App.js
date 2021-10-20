@@ -11,9 +11,11 @@ const App = props => {
 
   return (
     <BrowserRouter>
-      <Route path="/">
-        <Layout fetchData={data} />
-      </Route>
+      <Switch>
+        <Route exact path="/" component={BarsIndexContainer} />
+        <Route exact path="/bars" component={BarsIndexContainer} />
+        <Route exact path="/bars/:id" component={BarShowContainer} />
+      </Switch>
     </BrowserRouter>
   )
 }
