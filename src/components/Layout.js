@@ -6,10 +6,6 @@ import BarsIndexContainer from './BarsIndexContainer'
 
 const Layout = (props) => {
 
-  const [secretMessage, setSecretMessage] = useState("I am totally the bard of the secret tunnel song is me")
-
-
-
   return(
     <div className="layout">
       <div className="top-bar grid-x">
@@ -19,11 +15,7 @@ const Layout = (props) => {
       </div>
 
       <div className="main-body">
-        <Switch> 
-          <Route exact path="/bars/:id" component={BarShowContainer}/>
-          <Route exact path="/" component={BarsIndexContainer} />
-          <Route exact path="/bars" component={BarsIndexContainer} />
-        </Switch>
+      
       </div>
 
       <div className="top-bar">

@@ -11,16 +11,13 @@ const BarShowContainer = (props) => {
     reviews: []
   })
 
-  const id = props.match.params.id
 
   const fetchBar = async () => {
-    const response = await fetch(`/api/v1/bars/${id}`)
-    const barData = await response.json()
-    setBarRecord(barData)
+  
   }
 
   useEffect(() => {
-    fetchBar()
+    // fetchBar()
   }, [])
 
   const barReviews = barRecord.reviews.map(review => {

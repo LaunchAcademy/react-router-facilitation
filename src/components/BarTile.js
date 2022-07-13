@@ -5,9 +5,7 @@ const BarTile = ({ id, name, address, hours_of_operation, cover_charge }) => {
     return(
       <div className="bar callout">
         <h3> 
-          <Link to={`/bars/${id}`}> 
-            {name} 
-          </Link>
+          {name}
         </h3>
         <h4>Address: {address} </h4>
         <h4>Hours of Operation: {hours_of_operation} </h4>
