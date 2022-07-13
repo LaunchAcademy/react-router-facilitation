@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react'
 
+import { Link } from "react-router-dom"
+
 import BarTile from './BarTile';
 
 const BarsIndexContainer = (props) => {
   const [bars, setBars] = useState([])
 
-  const fetchBars = async () => {
+  const getBars = async () => {
     const response = await fetch("/api/v1/bars")
     const parsedBarStuff = await response.json()
     setBars(parsedBarStuff)
   }
 
   useEffect(() => {
-    fetchBars()
+    getBars()
   }, [])
 
   const barTiles = bars.map(bar => {
@@ -30,7 +32,7 @@ const BarsIndexContainer = (props) => {
 
   return (
     <div className="bars-container">
-      <h2> I am the Bars Index Container </h2>
+      <h1> Some of our favorite bars:</h1>
       {barTiles}
     </div>
   )

@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react'
-import Bar from './Bar'
+import Review from "./Review"
 
 const BarShowContainer = (props) => { 
   const [barRecord, setBarRecord] = useState({
@@ -10,10 +10,10 @@ const BarShowContainer = (props) => {
     hours_of_operation: "",
     reviews: []
   })
-  
+
   const id = props.match.params.id
 
-  const fetchBar = async (id) => {
+  const fetchBar = async () => {
     const response = await fetch(`/api/v1/bars/${id}`)
     const barData = await response.json()
     setBarRecord(barData)
@@ -23,17 +23,32 @@ const BarShowContainer = (props) => {
     fetchBar()
   }, [])
 
+  const barReviews = barRecord.reviews.map(review => {
+    return (
+      <Review
+        key={review.id}
+        id={review.id}
+        rating={review.rating}
+        body={review.body}
+      />
+    )
+  })
+
   return(
     <div className="bars-container">
-      <h3> Bar Showssssssss Container </h3>
-      <Bar
-        key={barRecord.id}
-        id={barRecord.id}
-        name={barRecord.name}
-        reviews={barRecord.reviews}
-      />
+      <div className="bar">
+
+        <h3> You are viewing: {barRecord.name} </h3>
+
+        <div>
+          {barReviews}
+        </div>
+      </div>
     </div>
   )
 }
 
 export default BarShowContainer
+
+
+

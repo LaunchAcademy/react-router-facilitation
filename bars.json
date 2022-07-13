@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Paddy's Pub",
         "address": "Somewhere in Philadelphia",
-        "cover_charge": nil,
+        "cover_charge": null,
         "hours_of_operation": "whenever Charlie turns on the 'coors' light",
         "reviews": [
             {
@@ -27,7 +27,7 @@
         "id": 2,
         "name": "Suds",
         "address": "Also Philly",
-        "cover_charge": nil,
+        "cover_charge": null,
         "hours_of_operation": "4:00PM - 2:00AM",
         "reviews": [
             {

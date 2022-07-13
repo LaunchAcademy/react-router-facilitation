@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Switch, Route, Link } from "react-router-dom"
 
 import BarShowContainer from './BarShowContainer'
 import BarsIndexContainer from './BarsIndexContainer'
-import CoffeeShop from "./CoffeeShop"
 
 const Layout = (props) => {
-  console.log(props.fetchData)
+
+  const [secretMessage, setSecretMessage] = useState("I am totally the bard of the secret tunnel song is me")
+
 
 
   return(
@@ -18,10 +19,10 @@ const Layout = (props) => {
       </div>
 
       <div className="main-body">
-        <Switch>
+        <Switch> 
+          <Route exact path="/bars/:id" component={BarShowContainer}/>
           <Route exact path="/" component={BarsIndexContainer} />
           <Route exact path="/bars" component={BarsIndexContainer} />
-          <Route exact path="/bars/:id" component={BarShowContainer} />
         </Switch>
       </div>
 
