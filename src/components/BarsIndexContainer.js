@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from 'react'
+import React, { useState, useEffect } from 'react'
 
 import BarTile from './BarTile';
 
@@ -16,7 +16,7 @@ const BarsIndexContainer = (props) => {
   }, [])
 
   const barTiles = bars.map(bar => {
-    return(
+    return (
       <BarTile
         key={bar.id}
         id={bar.id}
@@ -28,7 +28,7 @@ const BarsIndexContainer = (props) => {
     )
   })
 
-  return(
+  return (
     <div className="bars-container">
       <h2> I am the Bars Index Container </h2>
       {barTiles}
